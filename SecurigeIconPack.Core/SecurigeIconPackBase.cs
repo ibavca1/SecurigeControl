@@ -191,7 +191,7 @@ namespace SecurigeIconPack.Core
         private static object SpinDurationCoerceValueCallback(DependencyObject dependencyObject, object value)
         {
             var val = (double)value;
-            return val < 0 ? 0d : value;
+            return val < 0 ? 0d : value; //За постил
         }
         public double SpinDuration
         {
