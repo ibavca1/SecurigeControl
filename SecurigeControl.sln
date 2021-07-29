@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurigeIconPack.Core", "SecurigeIconPack.Core\SecurigeIconPack.Core.csproj", "{720A0C06-AD6C-4DA9-A0BB-D73335B93E76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurigeIconPack", "SecurigeIconPack\SecurigeIconPack.csproj", "{910AF69E-5F32-4F11-9AFB-8699B29A7A5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{720A0C06-AD6C-4DA9-A0BB-D73335B93E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720A0C06-AD6C-4DA9-A0BB-D73335B93E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720A0C06-AD6C-4DA9-A0BB-D73335B93E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720A0C06-AD6C-4DA9-A0BB-D73335B93E76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910AF69E-5F32-4F11-9AFB-8699B29A7A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910AF69E-5F32-4F11-9AFB-8699B29A7A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910AF69E-5F32-4F11-9AFB-8699B29A7A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910AF69E-5F32-4F11-9AFB-8699B29A7A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5C06099-1D1C-46D4-B99D-62B98C32D3B4}
+	EndGlobalSection
+EndGlobal
