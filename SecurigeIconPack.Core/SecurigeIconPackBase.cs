@@ -54,8 +54,8 @@ namespace SecurigeIconPack.Core
 
         public PackIconFlipOrientation Flip
         {
-            get { return (PackIconFlipOrientation)this.GetValue(FlipProperty); }
-            set { this.SetValue(FlipProperty, value); }
+            get => (PackIconFlipOrientation)GetValue(FlipProperty);
+            set => SetValue(FlipProperty, value);
         }
 
         public static readonly DependencyProperty RotationAngleProperty

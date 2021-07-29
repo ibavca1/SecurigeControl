@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfAppTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:iconPacks="clr-namespace:SecurigeIconPack;assembly=SecurigeIconPack"
+        xmlns:local="clr-namespace:WpfAppTest"
+        xmlns:converter="clr-namespace:SecurigeIconPack.Core.Converter;assembly=SecurigeIconPack.Core"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+<StackPanel>
+        <iconPacks:SecurigeIcons 
+            Width="40"
+            Height="40"
+            Margin="3 3 3 3"
+            Padding="5 5 5 5"
+            Foreground="White"
+            Kind="HomeSolid"
+            Background="Green"/>
+        <iconPacks:SecurigeIcons 
+            Width="40"
+            Height="40"
+            Margin="3 3 3 3"
+            Padding="5 5 5 5"
+            Foreground="White"
+            Kind="FireSolid"
+            Background="Green"/>
+
+</StackPanel>
+</Window>

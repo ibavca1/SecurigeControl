@@ -31,7 +31,7 @@ namespace SecurigeIconPack.Core.Converter
         {
             if (value is PackIconFlipOrientation flip)
             {
-                var scaleY = flip == PackIconFlipOrientation.Vertical || flip == PackIconFlipOrientation.Both ? -1 : 1;
+                var scaleY = flip == PackIconFlipOrientation.Vertical || flip == PackIconFlipOrientation.Both ? 1 : -1;
                 return scaleY;
             }
 
