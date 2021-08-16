@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurigeIconPack.Core", "SecurigeIconPack.Core\SecurigeIconPack.Core.csproj", "{720A0C06-AD6C-4DA9-A0BB-D73335B93E76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecurigeIconPack.Core", "SecurigeIconPack.Core\SecurigeIconPack.Core.csproj", "{720A0C06-AD6C-4DA9-A0BB-D73335B93E76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurigeIconPack", "SecurigeIconPack\SecurigeIconPack.csproj", "{910AF69E-5F32-4F11-9AFB-8699B29A7A5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecurigeIconPack", "SecurigeIconPack\SecurigeIconPack.csproj", "{910AF69E-5F32-4F11-9AFB-8699B29A7A5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppTest", "WpfAppTest\WpfAppTest.csproj", "{77681BE8-E336-4185-AB19-BCD8E47A8A13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAppTest", "WpfAppTest\WpfAppTest.csproj", "{77681BE8-E336-4185-AB19-BCD8E47A8A13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecurigeDeviceFlag", "SecurigeDeviceFlag\SecurigeDeviceFlag.csproj", "{599ED5E9-09BC-4640-8798-743C5D0BF32A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardView", "CardView\CardView.csproj", "{B459E742-1C0A-4D71-8B67-993C4F28CF40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{77681BE8-E336-4185-AB19-BCD8E47A8A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77681BE8-E336-4185-AB19-BCD8E47A8A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77681BE8-E336-4185-AB19-BCD8E47A8A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{599ED5E9-09BC-4640-8798-743C5D0BF32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{599ED5E9-09BC-4640-8798-743C5D0BF32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{599ED5E9-09BC-4640-8798-743C5D0BF32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{599ED5E9-09BC-4640-8798-743C5D0BF32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B459E742-1C0A-4D71-8B67-993C4F28CF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B459E742-1C0A-4D71-8B67-993C4F28CF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B459E742-1C0A-4D71-8B67-993C4F28CF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B459E742-1C0A-4D71-8B67-993C4F28CF40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

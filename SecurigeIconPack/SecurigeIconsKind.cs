@@ -23,5 +23,16 @@ namespace SecurigeIconPack
         [Description("battery-charging-low")] BatteryChargingLow,
         [Description("battery-high")] BatteryHigh,
         [Description("battery-charging-high")] BatteryChargingHigh,
+        [Description("power")] PowerPlug,
+        [Description("power")] PowerPlugOff,
+        [Description("fire")] Flame,
+        [Description("zones")] ArrowUpDown,
+        [Description("zones")] SignIn,
+        [Description("zones")] LogIn,
+        [Description("zones")] _24HoursFill,
+        [Description("zones")] BulletInline,
+        [Description("zones")] SwapVerticalBold,
+        [Description("zones")] ArrowUp,
+        [Description("zones")] RadioButtonLine,
     }
 }

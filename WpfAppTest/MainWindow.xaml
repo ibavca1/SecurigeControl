@@ -6,9 +6,112 @@
         xmlns:iconPacks="clr-namespace:SecurigeIconPack;assembly=SecurigeIconPack"
         xmlns:local="clr-namespace:WpfAppTest"
         xmlns:converter="clr-namespace:SecurigeIconPack.Core.Converter;assembly=SecurigeIconPack.Core"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-<StackPanel>
+    <Window.Resources>
+        <Style x:Key="CardStyle" TargetType="{x:Type DataGridRow}">
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Margin" Value="2.5" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridRow}">
+                        <Border x:Name="DGR_Border"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    SnapsToDevicePixels="True">
+                            <SelectiveScrollingGrid>
+                                <SelectiveScrollingGrid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </SelectiveScrollingGrid.ColumnDefinitions>
+                                <SelectiveScrollingGrid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </SelectiveScrollingGrid.RowDefinitions>
+                                <!-- Replacment of DataGridCellsPresenter -->
+                                <ContentControl
+                                            Grid.Column="1"
+                                            Content="{Binding}"
+                                            ContentTemplate="{Binding ItemTemplate,RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                </ContentControl>
+                                <DataGridDetailsPresenter Grid.Column="1"
+                                                  Grid.Row="1"
+                                                  SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                  Visibility="{TemplateBinding DetailsVisibility}" />
+                                <DataGridRowHeader Grid.RowSpan="2"
+                                           SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+                                           Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Row}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                            </SelectiveScrollingGrid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                             Value="True">
+                                <Setter TargetName="DGR_Border"
+                                Property="Background"
+                                Value="LightGray" />
+                            </Trigger>
+                            <Trigger Property="IsSelected"
+                             Value="True">
+                                <Setter TargetName="DGR_Border"
+                                Property="Background"
+                                Value="Gray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsSelected" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="Red" />
+                </MultiTrigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="ItemsControl.AlternationIndex" Value="1" />
+                        <Condition Property="IsSelected" Value="False" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Background" Value="LightGray" />
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <ControlTemplate x:Key="OverlayTemplate" TargetType="ContentControl">
+            <Border
+                Height="200"
+                Width="200"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="LightGray"
+                BorderBrush="Gray"
+                BorderThickness="1">
+                <Grid ClipToBounds="True">
+                <Grid Height="20" Width="200">
+                    <Grid.RenderTransform>
+                        <TranslateTransform X="55" Y="-55" />
+                    </Grid.RenderTransform>
+                    <Grid.LayoutTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="45" />
+                        </TransformGroup>
+                    </Grid.LayoutTransform>
+                    <Rectangle Fill="{TemplateBinding Background}" />
+                    <TextBlock Text="{TemplateBinding Content}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"
+                               Foreground="{TemplateBinding Foreground}" />
+                </Grid>
+            </Grid>
+                </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    <StackPanel>
         <iconPacks:SecurigeIcons 
             Width="40"
             Height="40"
@@ -24,7 +127,96 @@
             Padding="5 5 5 5"
             Foreground="White"
             Kind="FireSolid"
-            Background="Green"/>
+            Background="Green"
+            ToolTip="Hello"/>
+        <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Stretch" 
+                    Margin="10,0,0,0"
+                    
+                    >
+            <!--<Grid Width="41">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>-->
+            <TextBlock Grid.Column="0" Background="Green"
+                           Width="50" 
+                           Text="999" 
+                           Foreground="White">
 
-</StackPanel>
+            </TextBlock>
+            <iconPacks:SecurigeIcons Grid.Column="1"
+                Kind="ToolsSolid"
+                Padding="1 1 1 1"
+                Foreground="White"
+                Background="Green"/>
+
+            <Border BorderThickness="3" 
+                    BorderBrush="Green"
+                    CornerRadius="5">
+                <StackPanel Width="41" >
+                    <StackPanel.Background>
+                        <SolidColorBrush Color="#FFFBEAEA" Opacity="0"/>
+                    </StackPanel.Background>
+                    <TextBlock Background="Green"
+                               Width="41" 
+                               Text="999" 
+                               Foreground="White" />
+                </StackPanel>
+            </Border>
+            <!--</Grid>-->
+            </StackPanel>
+        <Border Width="41"
+                CornerRadius="3" 
+                BorderBrush="Green" 
+                BorderThickness="3">
+            <Grid Background="Green">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"  Background="Green"
+                            HorizontalAlignment="Left"
+                            Text="9" 
+                            Foreground="White" />
+                <iconPacks:SecurigeIcons Grid.Column="1" 
+                                         HorizontalAlignment="Right"
+                                         Kind="ToolsSolid" 
+                                         Width="15"
+                                         Foreground="White"
+                                         Background="Green"/>
+            </Grid>
+        </Border>
+        <DataGrid         HeadersVisibility="None"
+                          SelectionUnit="FullRow"
+                          RowStyle="{StaticResource CardStyle}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <DataGrid.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Incidents}"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                </DataTemplate>
+            </DataGrid.ItemTemplate>
+            <DataGrid.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </DataGrid.ItemsPanel>
+        </DataGrid>
+        <ContentControl x:Name="IsInstalledOverlay"
+                        ClipToBounds="True"
+                        IsTabStop="False"
+                        Focusable="False"
+                        Content="Installed"
+                        Background="#007F00"
+                        Foreground="White"
+                        Template="{StaticResource OverlayTemplate}" />
+        <ContentControl x:Name="OutOfDateOverlay"
+                        ClipToBounds="True"
+                        IsTabStop="False"
+                        Focusable="False"
+                        Content="out-of-date"
+                        Background="#A90000"
+                        Foreground="White"
+                        Template="{StaticResource OverlayTemplate}" />
+    </StackPanel>
 </Window>
